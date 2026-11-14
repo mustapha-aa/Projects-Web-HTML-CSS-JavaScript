@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <div class="loader" id="loader">
+        <div class="spinner"></div>
+        <h3>Loading...</h3>
+        <p>Please wait a moment</p>
+    </div>
+
+    <div class="box">
+        <aside>
+            <div class="sidebar-header">
+                <div class="logo">
+                    <img src="images/logo.png" alt="">
+                    <h1>Expense Tracker</h1>
+                </div>
+                <nav>
+                    <a href="#" id="btn_home" class="active"><i data-lucide="house"></i><span>Home</span></a>
+                    <a href="#" id="btn_add_transaction"><i data-lucide="circle-plus"></i><span>Add Transaction</span></a>
+                    <a href="#" id="btn_transactions"><i data-lucide="receipt-text"></i><span>Transactions</span></a>
+                    <a href="#" id="btn_settings"><i data-lucide="settings"></i><span>Settings</span></a>
+                </nav>
+            </div>
+            <div class="sidebar-footer">
+                <i data-lucide="chart-no-axes-combined"></i>
+                <div class="footer-text">
+                    <span>Better money</span>
+                    <span>Better future</span>
+                </div>
+            </div>
+        </aside>
+
+        <main>
+            <div class="container">
+                <div class="top-bar">
+                    <div class="search-bar">
+                        <i data-lucide="search"></i>
+                        <input type="text" id="search_transactions_name" placeholder="Search Transactions...">
+                    </div>
+                    <div class="user-actions">
+                        <div id="theme-btn">
+                            <i data-lucide="moon"></i>
+                        </div>
+                        <div class="user-profile" id="btn_profile">
+                             <img src="images/user-img.png" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="content">
+                    <!-- home-page -->
+                    <div class="home-page">
+                        <h2>Welcome Back!</h2>
+                        <p>Here's your financial overview</p>
+                        <div class="box-cards">
+                            <div class="card balance">
+                                <div class="icon wallet">
+                                    <i data-lucide="wallet"></i>
+                                </div>
+                                <h4>Net Balance</h4>
+                                <p class="total-net-balance"> <!--total net balance will be dynamically added here --> </p>
+                            </div>
+                            <div class="card income">
+                                <div class="icon arrow-up">
+                                    <i data-lucide="arrow-up"></i>
+                                </div>
+                                <h4>Total Income</h4>
+                                <p class="total-income"> <!--total income will be dynamically added here --> </p>
+                            </div>
+                            <div class="card expenses">
+                                <div class="icon arrow-down">
+                                    <i data-lucide="arrow-down"></i>
+                                </div>
+                                <h4>Total Expenses</h4>
+                                <p class="total-expense"> <!--total expense will be dynamically added here --> </p>
+                            </div>
+                        </div>
+                        <div class="recent-transactions">
+                            <div class="transactions-header">
+                                <h3>Recent Transactions</h3>
+                                <a href="#" id="view_all"><span>View All</span><i data-lucide="arrow-right"></i></a>
+                            </div>
+                            <table id="last-four-transactions">
+                                <!-- last four Transactions will be dynamically added here -->
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- transactions-page -->
+                    <div class="transactions-page">
+                        <div class="transactions-header">
+                            <h2>All Transactions</h2>
+                            <div class="filter-container">
+                                <select id="type">
+                                    <option value="">All Types</option>
+                                    <option value="income">Income</option>
+                                    <option value="expense">Expense</option>
+                                </select>
+                            
+                                <select id="category">
+                                    <option value="">All Categories</option>
+                                    <option value="food">Food</option>
+                                    <option value="shopping">Shopping</option>
+                                    <option value="transport">Transport</option>
+                                    <option value="work">Work</option>
+                                </select>
+                            
+                                <button type="button" class="search-btn" id="search-btn">
+                                    <i data-lucide="search"></i>
+                                    <span>Search</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="transactions-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Name</th>
+                                        <th>Category</th>
+                                        <th>Type</th>
+                                        <th>Amount</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="transaction-list">
+                                    <!-- Transactions will be dynamically added here -->
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- settings-page -->
+                    <div class="settings-page">
+                        <h2>Settings</h2>
+                        <p>Customize your experience</p>
+                        <div class="box-cards">
+                            <div class="card card-general-settings">
+                                <h4>General Settings</h4>
+                                <p>preferemes basic your Set</p>
+                                <div class="General-Settings-main">
+                                    <div class="language-bar bar">
+                                        <div class="title-bar">
+                                            <i data-lucide="globe"></i>
+                                            <p>Language</p>
+                                        </div>
+                                        <select id="Language">
+                                            <option value="english">English</option>
+                                            <option value="french">French</option>
+                                            <option value="spanish">Spanish</option>
+                                            <option value="german">German</option>
+                                        </select>
+                                    </div>
+                                    <div class="currency-bar bar">
+                                        <div class="title-bar">
+                                            <i data-lucide="circle-dollar-sign"></i>
+                                            <p>Currency</p>
+                                        </div>
+                                        <select id="currency">
+                                            <option value="$">USD ($)</option>
+                                            <option value="€">EUR (€)</option>
+                                            <option value="£">GBP (£)</option>
+                                            <option value="¥">JPY (¥)</option>
+                                        </select>
+                                    </div>
+                                    <div class="date-format-bar bar">
+                                        <div class="title-bar">
+                                            <i data-lucide="eye-off"></i>
+                                            <p>Balances</p>
+                                        </div>
+                                        <select id="hide-balances">
+                                            <option value="show">Show</option>
+                                            <option value="hide">Hide</option>
+                                            <option value="tap">Hide until tapped</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <button type="button" class="save-btn" id="save-general-settings">Save Changes</button>
+                            </div>
+                            <div class="card card-notifications">
+                                <h4>Notifications</h4>
+                                <p>Manage your alerts</p>
+                                <div class="notifications-main">
+                                    <div class="email-notifications bar">
+                                        <div class="title-bar">
+                                            <i data-lucide="mail"></i>
+                                            <p>Email Notifications</p>
+                                        </div>
+                                        <label class="switch">
+                                            <input type="checkbox" id="email-notifications-toggle">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                    <div class="push-notifications bar">
+                                        <div class="title-bar">
+                                            <i data-lucide="bell"></i>
+                                            <p>Push Notifications</p>
+                                        </div>
+                                        <label class="switch">
+                                            <input type="checkbox" id="push-notifications-toggle">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                    <div class="LowBalanceAlert bar">
+                                        <div class="title-bar">
+                                            <i data-lucide="triangle-alert"></i>
+                                            <p>Low Balance Alert</p>
+                                        </div>
+                                        <label class="switch">
+                                            <input type="checkbox" id="LowBalanceAlert-toggle">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                    <div class="transaction-notifications bar">
+                                        <div class="title-bar">
+                                            <i data-lucide="receipt"></i>
+                                            <p>Transaction Notifications</p>
+                                        </div>
+                                        <label class="switch">
+                                            <input type="checkbox" id="transaction-notifications-toggle">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div id="notifications-description">
+                                    <i data-lucide="info"></i>
+                                    <span>You'll receive notifications instantly on your device.</span>
+                                </div>
+                            </div>
+                            <div class="card card-data-management">
+                                <h4>Data Management</h4>
+                                <p>Manage your data safely</p>
+                                <div class="data-management-main">
+                                    <div class="export-data bar">
+                                        <div class="title-bar">
+                                            <i data-lucide="download"></i>
+                                            <p>Export Data</p>
+                                        </div>
+                                        <button type="button" id="export-data-btn">Export</button>
+                                    </div>
+                                    <div class="import-data bar">
+                                        <div class="title-bar">
+                                            <i data-lucide="upload"></i>
+                                            <p>Import Data</p>
+                                        </div>
+                                        <label for="import-data-input">Import</label>
+                                        <input type="file" id="import-data-input" accept=".json" hidden>
+                                    </div>
+                                    <div class="reset-data bar">
+                                        <div class="title-bar">
+                                            <i data-lucide="trash-2"></i>
+                                            <p>Reset Data</p>
+                                        </div>
+                                        <button type="button" id="reset-data-btn">Reset</button>
+                                    </div>
+                                </div>
+                                <div id="data-management-description">
+                                    <i data-lucide="circle-alert"></i>
+                                    <span>This action cannot be undone!</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <!-- profile-page -->
+                    <div class="profile-page">
+                        <div class="profile">
+                            <div class="profile-image">
+                                <img src="images/user-img.png" id="profile-img" alt="Profile">
+
+                                <label for="upload-img" class="upload-icon">
+                                    <i data-lucide="camera"></i>
+                                </label>
+                            
+                                <input type="file" id="upload-img" accept="image/*" hidden>
+                            </div>
+                            <div class="user-info">
+                                <h3>Mustapha Aadayrou</h3>
+                                <p id="show-bio"><!--bio will be dynamically added here --></p>
+                                <div id="online">
+                                    <span id="ronde-online"></span>
+                                    <span>online</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-cards">
+                            <div class="card">
+                                <div class="header-card">
+                                    <i data-lucide="user-round"></i>
+                                    <h4>Personal Information</h4>
+                                </div>
+                                <div class="personal-information-form">
+                                    <form action="">
+                                        <div class="field full-name">
+                                            <label for="full-name">
+                                                <i data-lucide="user-round"></i>
+                                                <span>Full Name</span> 
+                                            </label>
+                                            <input type="text" id="full-name" placeholder="Name" value="Mustapha Aadayrou">
+                                        </div>
+                                        <div class="field email">
+                                            <label for="email">
+                                                <i data-lucide="mail"></i>
+                                                <span>Email</span>
+                                            </label>
+                                            <input type="email" id="email" placeholder="Email" value="mustapha.aadayrou@gmail.com">
+                                        </div>
+                                        <div class="field Bio">
+                                            <label for="bio">
+                                                <i data-lucide="receipt-text"></i>
+                                                <span>Bio</span> 
+                                            </label>
+                                            <textarea id="bio" name="bio" placeholder="Write something about yourself..." rows="3">Full-stack Developer | Passionate about technology and coding.</textarea>
+                                        </div>
+                                        <button type="button" class="save-btn" id="save-info">Save Changes</button>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="header-card">
+                                    <i data-lucide="chart-no-axes-combined"></i>
+                                    <h4>Account Statistics</h4>
+                                </div>
+                                <div class="account-statistics">
+                                    <div class="card balance-card">
+                                        <i data-lucide="wallet"></i>
+                                        <div class="net-balance">
+                                            <p class="total-net-balance"> <!--total net balance will be dynamically added here --> </p>
+                                            <span>Net Balance</span>
+                                        </div>                                       
+                                    </div>
+                                    <div class="card income-card">
+                                        <i data-lucide="arrow-up"></i>
+                                        <div class="income">                                           
+                                            <p class="total-income"> <!--total income will be dynamically added here --> </p>
+                                            <span>Total Income</span>
+                                        </div>
+                                    </div>
+                                    <div class="card expenses-card">
+                                        <i data-lucide="arrow-down"></i>
+                                        <div class="expenses">
+                                            <p class="total-expense"> <!--total expense will be dynamically added here --> </p>
+                                            <span>Total Expenses</span>
+                                        </div>
+                                    </div>
+                                    <div class="card savings-rate-card">
+                                        <i data-lucide="chart-pie"></i>
+                                        <div class="savings-rate">
+                                            <p id="percentage-savings-rate"> <!--Savings Rate will be dynamically added here --> </p>
+                                            <span>Savings Rate</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="saving-message">
+                                    <!-- Saving Message will be dynamically added here -->
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="header-card">
+                                    <i data-lucide="shield-check"></i>
+                                    <h4>Account Security</h4>
+                                </div>
+                                <div class="account-security-form">
+                                    <form action="">
+                                        <div class="field current-password">
+                                            <label for="current-password">
+                                                <i data-lucide="lock"></i>
+                                                <span>Current Password</span> 
+                                            </label>
+                                            <input type="password" id="current-password" placeholder="Current Password">
+                                        </div>
+                                        <div class="field new-password">
+                                            <label for="new-password">
+                                                <i data-lucide="lock"></i>
+                                                <span>New Password</span>
+                                            </label>
+                                            <input type="password" id="new-password" placeholder="New Password">
+                                        </div>
+                                        <div class="field confirm-password">
+                                            <label for="confirm-password">
+                                                <i data-lucide="lock"></i>
+                                                <span>Confirm Password</span> 
+                                            </label>
+                                            <input type="password" id="confirm-password" placeholder="Confirm Password">
+                                        </div>
+                                        <button type="button" class="save-btn" id="update-password">Update Password</button>
+                                        <div id="password-description">
+                                            <i data-lucide="info"></i>
+                                            <span>Keep your account secure. Use a strong password.</span>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- add-transaction-page -->
+    <div class="add-transaction-page">
+        <div class="add-transaction" id="add-transaction">
+            <div class="add-transaction-header">
+                <h2>Add Transaction</h2>
+                <button type="button" class="close-btn" id="close-add-transaction"><i data-lucide="x"></i></button>
+            </div>
+            <form id="add-transaction-form">
+                <div class="form-group">
+                    <label for="transaction-name">Transaction Name</label>
+                    <input type="text" id="transaction-name" placeholder="e.g. Groceries" required>
+                </div>
+                <div class="form-group">
+                    <label for="transaction-amount">Amount</label>
+                    <input type="number" id="transaction-amount" placeholder="e.g. 150.00" required>
+                </div>
+                <div class="form-group">
+                    <label for="transaction-type">Type</label>
+                    <select id="transaction-type" required>
+                        <option value="">Select Type</option>
+                        <option value="income">Income</option>
+                        <option value="expense">Expense</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="transaction-category">Category</label>
+                    <select id="transaction-category" required>
+                        <option value="">Select Category</option>
+                        <option value="food">Food</option>
+                        <option value="shopping">Shopping</option>
+                        <option value="transport">Transport</option>
+                        <option value="work">Work</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="transaction-date">Date</label>
+                    <input type="date" id="transaction-date" required>
+                </div>
+                <button type="button" class="save-btn" id="transaction-btn">Add Transaction</button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

@@ -1,0 +1,1030 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-primary: #10B981;
+    --color-balance: #059669;
+    --color-blue: #3B82F6;
+    --color-expense: #EF4444;
+
+    --color-page: #F4F7FB;
+    --color-surface: #FFFFFF;
+    --color-text: #0F172A;
+    --color-text-muted: #64748B;
+    --color-border: #E2E8F0;
+
+    --color-sidebar: #102235;
+    --color-sidebar-text: #E2E8F0;
+    --color-sidebar-muted: #94A3B8; 
+
+    --shadow-card: 0 4px 16px rgba(15, 23, 42, 0.06);
+    --shadow-modal: 0 20px 50px rgba(15, 23, 42, 0.20);
+
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 12px;
+    --radius-xl: 16px; 
+
+    --wallet-bg:  #76c6ae;
+    --arrow-up-bg: #7caeff;
+    --arrow-down-bg:#f87171;
+
+    /* Red */
+    --danger-bg: #FEE2E2;
+    --danger: #EF4444;
+
+    /* Blue */
+    --info-bg: #DBEAFE;
+
+    --great-message:#d9f4e3;
+
+    --yellow-bg : #fef4cc91;
+    
+     
+}
+
+[data-theme="dark"] {
+    --color-primary: #10B981;
+    --color-balance: #34D399;
+    --color-blue: #3B82F6;
+    --color-expense: #F87171;
+
+    --color-page: #0F172A;
+    --color-surface: #1E293B;
+    --color-text: #F8FAFC;
+    --color-text-muted: #94A3B8;
+    --color-border: #334155;
+
+    --color-sidebar: #0B1120;
+    --color-sidebar-text: #E2E8F0;
+    --color-sidebar-muted: #94A3B8;
+
+    --shadow-card: 0 4px 16px rgba(0, 0, 0, 0.20);
+    --shadow-modal: 0 20px 50px rgba(0, 0, 0, 0.50);
+
+    --wallet-bg: #065f464a;
+    --arrow-up-bg: #1e40af4a;
+    --arrow-down-bg: #991b1b4a;
+
+    /* Red */
+    --danger-bg: #451A1A;
+    --danger: #F87171;
+
+    /* Blue */
+    --info-bg: #172554;
+
+    --great-message: #065f464a;
+
+    --yellow-bg : #453B20;
+}
+
+body,
+main,
+.card,
+table,
+input,
+textarea,
+select {
+    transition: background-color 0.3s ease,
+                color 0.3s ease,
+                border-color 0.3s ease;
+}
+
+#theme-btn.rotate svg {
+    animation: rotate-icon 0.6s ease-in-out;
+}
+
+@keyframes rotate-icon {
+    from {
+        transform: rotate(0deg) scale(0.7);
+    }
+
+    to {
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+
+body {
+    height: 100vh;
+    width: 100vw;
+    font-family: 'Inter', Arial, sans-serif;
+    background-color: var(--color-surface);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.box {
+    height: 95%;
+    width: 97%;
+    max-width: 1800px;
+    max-height: 720px;
+    color: var(--color-text);
+    border-radius: var(--radius-lg);
+    line-height: 1.5;
+    box-shadow: 0px 0px 14px 0px rgb(0 0 0 / 69%);
+    display: flex;
+}
+
+
+/* Starting sidebar styles */
+aside {
+    width: 220px;
+    height: 100%;
+    background-color: var(--color-sidebar);
+    color: var(--color-sidebar-text);
+    border-top-left-radius: var(--radius-lg);
+    border-bottom-left-radius: var(--radius-lg);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    
+    padding: 15px 0;
+}
+.logo img {
+    width: 70px;
+}
+.logo h1 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--color-sidebar-text);
+}
+
+nav {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+nav a {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    margin: 5px 10px;
+    color: var(--color-sidebar-text);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: var(--radius-md);
+    transition: background-color 0.3s, color 0.3s;
+}
+nav a:hover {
+    background-color: var(--color-primary);
+    color: var(--color-surface);
+    
+}
+nav a.active {
+    background-color: var(--color-primary);
+    color: var(--color-surface);
+}
+
+nav a span {
+    margin-left: 10px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.sidebar-footer {
+    padding: 15px 20px;
+    font-size: 12px;
+    color: var(--color-sidebar-muted);
+    /* text-align: center; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sidebar-footer .footer-text {
+    margin-left: 5px;
+    margin-top: 8px;
+}
+
+
+/* Starting main content styles */
+main {
+    flex: 1;
+    height: 100%;
+    background-color: var(--color-page);
+    border-top-right-radius: var(--radius-lg);
+    border-bottom-right-radius: var(--radius-lg);
+}
+
+main .container {
+    padding: 20px 25px 0 25px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+main .top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+main .top-bar .search-bar {
+    width: 400px;
+    display: flex;
+    align-items: center;
+    background-color: var(--color-surface);
+    padding: 8px 12px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-card);
+}
+main .top-bar .search-bar svg {
+    margin-right: 8px;
+    color: var(--color-text-muted);
+}
+main .top-bar .search-bar input {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 14px;
+    color: var(--color-text);
+    padding: 4px 0 4px 4px;
+    flex: 1;
+}
+main .top-bar .search-bar input::placeholder {
+    color: var(--color-text-muted);
+    font-size: 14px;
+}
+
+main .top-bar .user-actions {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+main .top-bar .user-actions .user-profile {
+    width: 35px;
+    height: 35px;
+    background-color: var(--color-sidebar-muted);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-card);
+    cursor: pointer;
+}
+main .top-bar .user-actions .user-profile img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+main .top-bar .user-actions svg {
+    cursor: pointer;
+}
+
+main .content {
+    flex: 1;
+}
+main .content h2 {
+    color: var(--color-text);
+}
+
+
+/* starting home page styles */
+
+.home-page p, .settings-page p {
+    color: var(--color-text-muted);
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+.home-page .box-cards, .settings-page .box-cards, .profile-page .box-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 25px;
+}
+.home-page .box-cards .card, .settings-page .box-cards .card, .profile-page .box-cards .card {
+    padding: 20px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-card);
+}
+.home-page .box-cards .card {
+    color: #fff;
+}
+.home-page .box-cards .balance {
+    background-color: var(--color-balance);
+}
+.home-page .box-cards .income {
+    background-color: var(--color-blue);
+}
+.home-page .box-cards .expenses {
+    background-color: var(--color-expense);
+}
+
+.home-page .box-cards .icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-page .box-cards .arrow-down {
+    background-color: var(--arrow-down-bg);
+}
+.home-page .box-cards .wallet {
+    background-color: var(--wallet-bg);
+}
+.home-page .box-cards .arrow-up {
+    background-color: var(--arrow-up-bg);
+}
+
+
+.home-page .box-cards h4 {
+    font-size: 14px;
+    font-weight: 500;
+}
+.home-page .box-cards p {
+    font-size: 23px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.home-page .transactions-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.home-page .transactions-header a {
+    text-decoration: none;
+    color: var(--color-blue);
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+.home-page .transactions-header a svg {
+    margin-left: 5px;
+    width: 16px;
+}
+
+.home-page table, .transactions-page table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--color-surface);
+    box-shadow: var(--shadow-card);
+    border-top-left-radius: var(--radius-md);
+    border-top-right-radius: var(--radius-md);
+}
+.home-page table td, .transactions-page table th, .transactions-page table td {
+    padding: 12px 15px;
+    font-size: 14px;
+    border-bottom: var(--color-border) 2px solid;
+    
+}
+.home-page table .td-Amount {
+    text-align: end;
+    font-weight: 600;
+}
+.home-page table .td-start {
+    display: flex;
+    flex-direction: column;
+}
+.home-page table .td-date {
+    text-align: center;
+    color: var(--color-text-muted);
+}
+.home-page table .td-start .name, .transactions-page table .name {
+    font-weight: 700;
+    color: var(--color-text);
+}
+.home-page table .td-start .category {
+    font-size: 13px;
+    color: var(--color-text-muted);
+}
+
+
+/* starting All transaction page styles */
+.transactions-page {
+    display: none;
+}
+.transactions-page .transactions-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+
+/* Scrollbar */
+.transactions-table::-webkit-scrollbar {
+    width: 12px;
+}
+
+.transactions-table::-webkit-scrollbar-track {
+    background: var(--color-page);
+    border-radius: 10px;
+}
+
+.transactions-table::-webkit-scrollbar-thumb {
+    background: #94A3B8;
+    border-radius: 10px;
+    border: 3px solid var(--color-page);
+}
+
+.transactions-table::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary);
+}
+
+
+.transactions-page .transactions-header .filter-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.transactions-page .transactions-header .filter-container select {
+    width: 200px;
+    background-color: var(--color-surface);
+    padding: 10px 10px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+    font-size: 14px;
+    color: var(--color-text);
+}
+.transactions-page .transactions-header .filter-container button {
+    background-color: var(--color-primary);
+    color: var(--color-surface);
+    padding: 10px 15px;
+    border-radius: var(--radius-md);
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.transactions-page .transactions-header .filter-container button svg {
+    width: 16px;
+    height: 16px;
+}
+
+.transactions-page .transactions-table {
+    width: 100%;
+    max-height: 550px;
+    overflow-x: auto;
+}
+
+.transactions-page table th {
+    background-color: var(--color-page);
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    
+}
+.transactions-page table td {
+    text-align: center;
+}
+
+.transactions-page table td .edit-btn, .transactions-page table td .delete-btn {
+    color: white;
+    border-radius: var(--radius-md);
+    border: none;
+    width: 70px;
+    cursor: pointer;
+    padding: 5px;
+}
+.transactions-page table td .edit-btn {
+    background-color: #679ef9;
+    margin-right: 5px;
+    transition: all 0.3s ease;
+}
+.transactions-page table td .edit-btn:hover {
+    background-color: var(--color-blue);
+}
+.transactions-page table td .delete-btn {
+    background-color: #f97979;
+    transition: all 0.3s ease;
+}
+.transactions-page table td .delete-btn:hover {
+    background-color: var(--color-expense);
+}
+
+/* starting Add Transaction page styles */
+.add-transaction-page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 100;
+}
+.add-transaction {
+    width: 500px;
+    background-color: var(--color-surface);
+    padding: 25px;
+    border-radius: var(--radius-md);
+    position: relative;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+
+}
+.add-transaction .add-transaction-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.add-transaction .add-transaction-header h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-text);
+}
+.add-transaction .add-transaction-header button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.add-transaction .add-transaction-header button svg {
+    color: var(--color-text);
+}
+
+.add-transaction #add-transaction-form .form-group {
+    margin-bottom: 15px;
+}
+.add-transaction #add-transaction-form .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: var(--color-text);
+    font-weight: 500;
+}
+.add-transaction #add-transaction-form .form-group input,
+.add-transaction #add-transaction-form .form-group select {
+    width: 100%;
+    padding: 10px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+    font-size: 14px;
+    color: var(--color-text);
+    background-color: var(--color-surface);
+}
+
+.save-btn {
+    width: 100%;
+    background-color: var(--color-primary);
+    color: var(--color-surface);
+    padding: 10px 15px;
+    border-radius: var(--radius-md);
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.type_income, .amount_income {
+    color: var(--color-primary);
+}
+.type_expense, .amount_expense {
+    color: var(--color-expense);
+}
+
+
+/* starting settings page styles  */
+
+.settings-page {
+    display: none;
+}
+
+.settings-page .box-cards .card {
+    color: var(--color-text);
+    background-color: var(--color-surface);
+}
+
+.General-Settings-main, .notifications-main, .data-management-main {
+    padding: 20px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-card);
+    margin-bottom: 25px;
+}
+
+.General-Settings-main p, .notifications-main p, .data-management-main p {
+    color: var(--color-text);
+    font-weight: 500;
+    margin: 0;
+}
+
+.bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0px;
+    margin-bottom: 15px;
+}
+.title-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.General-Settings-main select {
+    width: 180px;
+    background-color: var(--color-surface);
+    padding: 10px 10px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+    font-size: 14px;
+    color: var(--color-text);
+}
+
+
+.notifications-main .bar {
+    margin-bottom: 10px;
+}
+
+.notifications-main .switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+}
+.notifications-main .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.notifications-main .switch .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--color-border);
+    transition: .4s;
+    border-radius: 24px;
+}
+.notifications-main .switch .slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+    background-color: var(--color-surface);
+    transition: .4s;
+    border-radius: 50%;
+}
+
+.notifications-main .switch input:checked + .slider {
+    background-color: var(--color-primary);
+}
+
+.notifications-main .switch input:checked + .slider:before {
+    transform: translateX(26px);
+}
+.card-notifications #notifications-description, .card-data-management #data-management-description, .profile-page .card #saving-message {
+    padding: 15px 20px;
+    font-size: 14px;
+    border-radius: var(--radius-md);
+    border: none;
+    display: flex;
+    gap: 20px;
+}
+.card-notifications #notifications-description, .account-security-form #password-description {
+    background-color: var(--info-bg);
+    color: #3B82F6;
+}
+.card-data-management #data-management-description {
+    background-color: var(--danger-bg);
+    color: var(--danger);
+}
+
+.data-management-main button, .data-management-main .import-data label {
+    width: 100px;
+    text-align: center;
+    padding: 10px 15px;
+    border-radius: var(--radius-md);
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.data-management-main #export-data-btn,.data-management-main .import-data label {
+    background-color: var(--info-bg);
+    color: #3B82F6;
+    border: 2px solid #3B82F6;
+}
+.data-management-main #export-data-btn:hover, .data-management-main .import-data label:hover {
+    background-color: #3B82F6;
+    color: #F4F7FB;
+}
+
+.data-management-main #reset-data-btn {
+    background-color: var(--danger-bg);
+    color: var(--danger);
+    border: 2px solid var(--danger);
+}
+.data-management-main #reset-data-btn:hover {
+    background-color: var(--danger);
+    color: #F4F7FB;
+}
+
+
+/* starting profile page styles  */
+.profile-page {
+    display: none;
+}
+
+.user-profile {
+    position: relative;
+    z-index: 10;
+}
+
+.user-profile::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 12px;
+    height: 12px;
+    background-color: #059669;
+    border: 2px solid white;
+    border-radius: 50%;
+}
+
+.user-profile.active::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    background-color: var(--color-primary);
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.profile-page .profile {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background-color: var(--color-page);
+    box-shadow: var(--shadow-card);
+    padding: 15px;
+    border-radius: var(--radius-xl);
+    margin-bottom: 20px;
+}
+
+.profile-image {
+    position: relative;
+    width: 120px;
+    height: 120px;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.upload-icon {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    background: #10B981;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+
+.profile-page .profile h2 {
+    color: var(--color-text);
+    margin-bottom: 10px;
+}
+
+.profile-page .profile p {
+    color: var(--color-text-muted);
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.profile-page .profile #online {
+    width: fit-content;
+    background-color: var(--great-message);
+    padding: 6px 10px;
+    border-radius: var(--radius-xl);
+}
+
+.profile-page .profile span {
+    color: var(--color-primary);
+    margin-left: 5px;
+}
+
+.profile-page .profile #ronde-online::after {
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: var(--color-balance);
+    border-radius: 50%;
+    transition: .4s;
+    vertical-align: middle;
+}
+
+.profile-page .card .header-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.profile-page .card .header-card svg {
+    color: var(--color-blue);
+}
+.profile-page .card .header-card h4 {
+    color: var(--color-text);
+}
+.profile-page .card form button {
+    margin-top: 15px;
+}
+
+.profile-page .field {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+.profile-page .field input, .profile-page .field textarea {
+    width: 180px;
+    background-color: var(--color-surface);
+    padding: 10px 10px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+    font-size: 14px;
+    color: var(--color-text);
+}
+.profile-page .personal-information-form .field input, .profile-page .personal-information-form .field textarea {
+    width: 230px;
+}
+.profile-page .field textarea {
+    max-width: 230px;
+    max-height: 180px;
+    scrollbar-width: none;
+}
+.profile-page .field label {
+    display: flex;
+    align-items: center;
+}
+.profile-page .field label svg {
+    width: 19px;
+    margin-right: 10px;
+}
+.profile-page .field label span {
+    font-size: 15px;
+    padding-top: 5px;
+}
+
+.account-security-form #password-description {
+    padding: 10px 15px;
+    font-size: 12px;
+    border-radius: var(--radius-md);
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+.account-security-form #password-description svg {
+    width: 16px;
+}
+
+.profile-page .account-statistics {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.profile-page .account-statistics .card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 10px;
+}
+
+.profile-page .account-statistics .balance-card {
+    background-color: var(--great-message);
+}
+.profile-page .account-statistics .balance-card svg {
+    color: var(--color-primary);
+}
+.profile-page .account-statistics .income-card {
+    background-color: var(--info-bg);
+}
+.profile-page .account-statistics .income-card svg {
+    color: var(--color-blue);
+}
+.profile-page .account-statistics .expenses-card {
+    background-color: var(--danger-bg);
+}
+.profile-page .account-statistics .expenses-card svg {
+    color: var(--danger);
+}
+.profile-page .account-statistics .savings-rate-card {
+    background-color: var(--yellow-bg);
+}
+.profile-page .account-statistics .savings-rate-card svg {
+    color: #f59e0b;
+}
+
+.profile-page .account-statistics .card span {
+    font-size: 12px;
+}
+.profile-page .account-statistics .card p {
+    font-weight: 700;
+}
+
+.profile-page .card #saving-message {
+    padding: 10px;
+    gap: 10px;
+}
+.profile-page .card #saving-message span {
+    font-size: 12px;
+    padding-top: 3px;
+}
+.profile-page .card #saving-message svg {
+    width: 20px;
+}
+.profile-page .card #saving-message .info-message {
+    color: #3B82F6;
+}
+.profile-page .card #saving-message .great-message {
+    color: var(--color-balance);
+}
+.profile-page .card #saving-message .danger-message {
+    color: var(--danger);
+}
+
+
+/* Loader styles */ 
+.loader {
+    position: fixed;
+    inset: 0;
+    background: var(--color-surface);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.loader h3 {
+    margin-top: 20px;
+    color: var(--color-text);
+    font-size: 18px;
+}
+
+.loader p {
+    color: #94a3b8;
+    font-size: 13px;
+}
+
+.spinner {
+    width: 45px;
+    height: 45px;
+    border: 4px solid #e5e7eb;
+    border-top-color: var(--color-primary);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loader.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
