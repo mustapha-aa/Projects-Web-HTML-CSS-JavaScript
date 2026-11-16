@@ -4,7 +4,7 @@ A simple and responsive Login & Registration System built using HTML, CSS, and J
 
 ## Preview
 
-![Expense Tracker Screenshot](screenshot.png)
+![Screenshot](screenshot.png)
 
 ## 📌 Features
 

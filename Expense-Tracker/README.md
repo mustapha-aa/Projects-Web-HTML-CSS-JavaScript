@@ -4,7 +4,7 @@ A simple and modern Expense Tracker built with **HTML, CSS, and JavaScript**. Th
 
 ## Preview
 
-![Expense Tracker Screenshot](screenshot.png)
+![Screenshot](screenshot.png)
 
 ## Features
 
