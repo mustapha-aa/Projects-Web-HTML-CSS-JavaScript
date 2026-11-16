@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0px;
+    background: url("images/background.jpg") no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.block {
+    width: 400px;
+    border: 2px solid #ffffff75;
+    border-radius: 25px;
+    padding: 60px 40px;
+    
+
+    backdrop-filter: blur(10px);
+    
+}
+form {
+    margin: 20px
+}
+
+
+h2 {
+    margin: 20px 0px;
+    color: white;
+    font-size: 30px;
+    text-align: center;
+}
+
+.box_1 {
+    border-bottom: 2px solid #ffffffd6;
+    margin: 20px 0;
+    display: flex;
+    align-items: baseline;
+
+} 
+
+i {
+    color: #ffffffd6;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.box_1 input {
+    width: 100%;
+    height: 50px;
+    font-size: 18px;
+    border: none;
+    background: transparent;
+    color: white;
+    padding: 0;
+}
+
+input:focus {
+    outline: none;
+}
+input::placeholder {
+    color: #ffffffd6;
+    font-size: 16px;
+    text-transform: capitalize;
+    padding: 1px;
+}
+
+.box_2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    color: white;
+    margin-top: 40px;    
+}
+.box_2 label {
+    display: flex;
+    align-items: center;
+}
+
+.box_2 label input{
+    width: 15px;
+    height: 15px;
+    margin: 0 5px 0 0;
+}
+
+
+p {
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+p a {
+    font-weight: 550;
+}
+
+.submit {
+    width: 100%;
+    height: 50px;
+    border: none;
+    background: #ffffffe3;
+    transition: .5s;
+    color: #47135a;
+    display: block;
+    margin:20px 0 40px 0 ;
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: 8px;
+
+
+}
+.submit:hover {
+    background: white;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    width: fit-content;
+    position: relative;
+}
+a::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    display: grid;
+    width: 100%;
+    height: 2px;
+    background: white;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transition: all 0.5s ease;
+}
+a:hover::before{
+    transform: scaleX(1);
+}
+
+

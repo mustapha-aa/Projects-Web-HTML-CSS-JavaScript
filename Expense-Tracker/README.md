@@ -67,12 +67,12 @@ Your data remains available in the same browser unless the local storage is clea
 - Support additional currencies.
 - Improve responsive design for mobile devices.
 
-## Author
+## 👨‍💻 Author
 
-**Mustapha Aadayrou**
+Created as part of my journey in learning Front-End Web Development.
 
 - GitHub: [Your GitHub Profile](https://github.com/mustapha-aa)
 
 ---
 
-If you find this project useful, feel free to give it a star ⭐
+**If you like this project, feel free to give it a ⭐ on GitHub!**
