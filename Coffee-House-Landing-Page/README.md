@@ -3,7 +3,7 @@
 A responsive landing page for a coffee shop, built with **HTML, CSS and vanilla JavaScript**.
 This is a practice project to apply what I learned about layout, responsive design and DOM manipulation.
 
-🔗 **Live demo:** _add your GitHub Pages link here_
+🔗 **Live demo:** [View the website](https://mustapha-aa.github.io/Projects-Web-HTML-CSS-JavaScript/Coffee-House-Landing-Page/)
 
 ![Preview](screenshot.png)
 

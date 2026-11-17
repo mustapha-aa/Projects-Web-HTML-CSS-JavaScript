@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Landing Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="images/logo.png" alt="Logo">
+            </div>
+            <i id="btn-menu" class="fa-solid fa-bars"></i>
+            <ul>
+                <li><a href="#home" class="active">home</a></li>
+                <li><a href="#about">about</a></li>
+                <li><a href="#services">services</a></li>
+                <li><a href="#portfolio">portfolio</a></li>
+                <li><a href="#contact">contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="text">
+                <h4>hello, i'm</h4>
+                <h1>Mustapha aa</h1>
+                <p>Front-End Developer</p>
+                <a role="button" class="btn" href="#">Download CV</a>
+            </div>
+            <div class="hero_img">
+                <img src="images/hero.png" alt="Developer illustration">
+            </div>
+        </div>
+    </section>
+
+    <!-- start about -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="image_about">
+                <img src="images/about.jpg" alt="Profile photo">
+            </div>
+            <div class="content">
+                <div class="title">
+                    <h1>about <span>me</span></h1>
+                </div>
+                <h4>Front-End Developer</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Autem, placeat iure optio corrupti inventore, aspernatur 
+                    ratione incidunt quas aperiam quisquam distinctio 
+                    praesentium expedita sit perspiciatis iusto, deserunt 
+                    enim nihil facilis vel error eius repudiandae pariatur 
+                    aliquid! Ad ratione dolor qui, esse laborum quod 
+                    obcaecati ducimus sint.
+                </p>
+                <div class="bot_about">
+                    <a role="button" class="btn" href="#">Download CV</a>
+                    <a role="button" class="btn" href="#contact">Contact Me</a>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- start services -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="title">
+                <h1>My <span>services</span></h1>
+            </div>
+            <div class="boxs">
+                <div class="box">
+                    <i class="fa-solid fa-pen-ruler"></i>
+                    <h3>web design</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Voluptates ad sit expedita maxime ipsa molestias quasi?
+                    </p>
+                    <a role="button" class="btn" href="#">read more</a>
+                </div>
+                <div class="box">
+                    <i class="fa-solid fa-rocket"></i>
+                    <h3>fast performance</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Voluptates ad sit expedita maxime ipsa molestias quasi?
+                    </p>
+                    <a role="button" class="btn" href="#">read more</a>
+                </div>
+                <div class="box">
+                    <i class="fa-solid fa-code"></i>
+                    <h3>clean code</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Voluptates ad sit expedita maxime ipsa molestias quasi?
+                    </p>
+                    <a role="button" class="btn" href="#">read more</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- start portfolio -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <div class="title">
+                <h1>latest <span>projects</span></h1>
+            </div>
+            <div class="boxs">
+                <div class="box">
+                    <div class="box_hover">
+                        <span>landing page</span>
+                    </div>
+                    <img src="images/project1.png" alt="Project 1 preview">
+                </div>
+                <div class="box" id="box_2">
+                    <div class="box_hover">
+                        <span>landing page</span>
+                    </div>
+                    <img src="images/project2.png" alt="Project 2 preview">
+                </div>
+                <div class="box" id="box_3">
+                    <div class="box_hover">
+                        <span>landing page</span>
+                    </div>
+                    <img src="images/project3.png" alt="Project 3 preview">
+                </div>
+                <div class="box" id="box_4">
+                    <div class="box_hover">
+                        <span>landing page</span>
+                    </div>
+                    <img src="images/project4.png" alt="Project 4 preview">
+                </div>
+                <div class="box" id="box_5">
+                    <div class="box_hover">
+                        <span>landing page</span>
+                    </div>
+                    <img src="images/project5.png" alt="Project 5 preview">
+                </div>
+                <div class="box" id="box_6">
+                    <div class="box_hover">
+                        <span>landing page</span>
+                    </div>
+                    <img src="images/project6.png" alt="Project 6 preview">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- start contact -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="title">
+                <h1>contact <span>me</span></h1>
+            </div>
+            <form method="get">
+                <input type="text" placeholder="First Name" required>
+                <input type="text" placeholder="Last Name" required>
+                <input type="number" placeholder="Phone Number" required>
+                <input type="email" placeholder="Email Address" required>
+                <textarea cols="30" rows="10" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn">send message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="copyright">
+            <p>&copy; All rights reserved | Made by <a href="https://github.com/mustapha-aa" target="_blank" rel="noopener noreferrer">mustapha-aa</a></p>
+        </div>
+    </footer>
+    
+
+    <script src="main.js"></script>
+</body>
+</html>
