@@ -28,6 +28,7 @@ This is a practice project to apply what I learned about layout, responsive desi
 ## 📁 Project Structure
 
 ```
+Portfolio-Landing-Page/
 ├── index.html
 ├── style.css
 ├── main.js
