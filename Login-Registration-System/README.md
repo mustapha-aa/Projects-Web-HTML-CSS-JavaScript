@@ -1,75 +1,61 @@
-# Login & Registration System
+# Login & Register Form
 
-A simple and responsive Login & Registration System built using HTML, CSS, and JavaScript. This project allows users to create an account, log in, and search for an existing account.
+A responsive-style animated **Sign In / Sign Up** form with a sliding panel effect, built with plain HTML, CSS, and JavaScript.
+
+> 📚 This is a learning project to practice what I've learned. It is a front-end UI only, with no backend or real authentication.
+
+## Live Demo
+
+[View the demo](https://mustapha-aa.github.io/Projects-Web-HTML-CSS-JavaScript/Login-Registration-System/)
+
 
 ## Preview
 
-![Screenshot](screenshot.png)
+![Preview](screenshot.png)
 
-## 📌 Features
 
-- **User Registration:** Create a new account using a username, email, and password.
-- **User Login:** Log in using registered email and password.
-- **Password Confirmation:** Verify that both passwords match during registration.
-- **Duplicate Account Check:** Prevent registration with an email that already exists.
-- **Forgot Password:** Check whether an account exists using its email address.
-- **Form Validation:** Validate required fields and email format.
-- **Local Storage:** Store and retrieve user information using browser localStorage.
-- **Responsive Design:** Adapt the interface to different screen sizes.
 
-## 🛠️ Technologies Used
+## Features
+
+- Smooth sliding animation between the Sign In and Sign Up panels
+- Social login icons (Font Awesome)
+- Clean, modern design using the Montserrat font
+- No frameworks or dependencies, just HTML, CSS, and vanilla JS
+
+## Built With
 
 - HTML5
-- CSS3
-- JavaScript
-- Local Storage
+- CSS3 (Flexbox, transitions, keyframe animations)
+- JavaScript (DOM manipulation)
+- [Font Awesome](https://fontawesome.com/) for icons
+- [Google Fonts](https://fonts.google.com/) (Montserrat)
 
-## 📂 Project Structure
+## Project Structure
 
-```text
-Login-Registration-System/
-├── images/
-│   └── background.jpg
-├── Login.html
-├── Registration.html
-├── Forgot_password.html
+```
+sliding-login-form/
+├── index.html
 ├── style.css
-├── screenshot.png
 ├── script.js
 └── README.md
 ```
 
-## 🚀 Getting Started
+## Getting Started
 
-1. Clone this repository:
+1. Clone the repository:
 2. Open the project folder.
-3. Open `Login.html` in your browser.
-4. Register a new account and test the login functionality.
+3. Open `index.html` in your browser.
 
-## 💡 What I Learned
+No installation or build step is required.
 
-Through this project, I practiced:
+## How It Works
 
-- Working with HTML forms and input validation.
-- Styling forms using CSS.
-- Handling form events with JavaScript.
-- Using `addEventListener()` and `preventDefault()`.
-- Comparing and validating user input.
-- Managing data with `localStorage`.
-- Organizing JavaScript code across multiple HTML pages.
+`script.js` toggles an `active` class on the main container when the "Sign In" or "Sign Up" button in the side panel is clicked. The CSS transitions and transforms handle the sliding and fading animation.
 
-## ⚠️ Important Note
+## Credits
 
-This is a front-end educational project. User information is stored in the browser's localStorage.
+Based on a tutorial / design I followed while learning. **mustapha-aa**: [GitHub](https://github.com/mustapha-aa)
 
-It does not include a backend, database, real email verification, or secure password management. It is not intended for production use.
+## License
 
-## 👨‍💻 Author
-
-Created as part of my journey in learning Front-End Web Development.
-
-- GitHub: [Your GitHub Profile](https://github.com/mustapha-aa)
-
----
-
-**If you like this project, feel free to give it a ⭐ on GitHub!**
+This project is open source and free to use for learning purposes.
