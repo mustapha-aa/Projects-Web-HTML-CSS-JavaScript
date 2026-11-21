@@ -4,6 +4,8 @@ A simple and modern Expense Tracker built with **HTML, CSS, and JavaScript**. Th
 
 ## Preview
 
+🔗 **Live demo:** [View the website](https://mustapha-aa.github.io/Projects-Web-HTML-CSS-JavaScript/Expense-Tracker/)
+
 ![Screenshot](screenshot.png)
 
 ## Features
